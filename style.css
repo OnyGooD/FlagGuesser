@@ -1,7 +1,19 @@
 #selectedFlag{
     width: 200px;
-    aspect-ratio: 4 / 3 ;
+    aspect-ratio: 16 / 9 ;
     background-size: cover;
     background-position: center;
     border: 1px solid black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    >div{
+        border: 1px solid black;
+        width: 100%;
+        background: #333;
+    }
+}
+
+.reveal{
+    background: transparent !important;
 }
