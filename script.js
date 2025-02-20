@@ -3,6 +3,7 @@ const selectedFlagEl = document.getElementById("selectedFlag")
 
 let cards = []
 let flag = undefined
+let revealNumber = 0
 
 fetch("countries.json")
 .then(res => res.json())
@@ -31,7 +32,7 @@ fetch("countries.json")
 function tipp(){
     let country_code = countrySelectEl.value
     if(flag.code === country_code){
-        alert("Helyes!")
+        alert("Correct!")
         cards.forEach(card => {
             if(!card.classList.contains("reveal")){
                 card.classList.add("reveal")
@@ -42,6 +43,6 @@ function tipp(){
         revealNumber += 1
     }
     if(revealNumber == 6){
-        alert("Vesztettél! Megoldás:" + flag.country)
+        alert("You lost! Solution: " + flag.country)
     }
 }
